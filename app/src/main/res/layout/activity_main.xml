@@ -3,312 +3,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E0E0E0">
+    android:padding="16dp"
+    android:background="#FAFAFA">
 
-    <!-- Status Bar -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:background="@android:color/black" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Currency Converter"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp" />
 
-    <!-- Action Bar -->
+    <!-- Row 1: From -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#424242"
-        android:gravity="center_vertical"
-        android:padding="16dp">
+        android:layout_marginBottom="12dp">
 
-        <!-- App Icon (Red Circle with White Sun) -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#FF4444"
-            android:gravity="center"
-            android:text="☀"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:singleLine="true" />
+        <Spinner
+            android:id="@+id/spinnerFrom"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
 
-        <!-- App Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="LifeCycle"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/editFrom"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:background="#F5F5F5"
+            android:padding="12dp"
+            android:inputType="numberDecimal"
+            android:hint="0" />
     </LinearLayout>
 
-    <!-- Main Content Area with Dotted Border -->
-    <ScrollView
+    <!-- Row 2: To -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@android:color/white"
-            android:layout_margin="8dp"
-            android:padding="16dp"
-            android:backgroundTint="#FFFFFF">
+        <Spinner
+            android:id="@+id/spinnerTo"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
 
-            <!-- First Name and Last Name Row -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
+        <EditText
+            android:id="@+id/editTo"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:background="#F5F5F5"
+            android:padding="12dp"
+            android:inputType="numberDecimal"
+            android:hint="0" />
+    </LinearLayout>
 
-                <!-- First Name -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginEnd="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="First Name"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        android:layout_marginBottom="4dp" />
-
-                    <EditText
-                        android:id="@+id/etFirstName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:hint="First Name"
-                        android:background="#F5F5F5"
-                        android:textColorHint="#AAAAAA"
-                        android:textColor="@android:color/black"
-                        android:padding="12dp"
-                        android:imeOptions="actionNext" />
-                </LinearLayout>
-
-                <!-- Last Name -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Last Name"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        android:layout_marginBottom="4dp" />
-
-                    <EditText
-                        android:id="@+id/etLastName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:hint="Last Name"
-                        android:background="#F5F5F5"
-                        android:textColorHint="#AAAAAA"
-                        android:textColor="@android:color/black"
-                        android:padding="12dp"
-                        android:imeOptions="actionNext" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Gender -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gender"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="4dp" />
-
-                <RadioGroup
-                    android:id="@+id/rgGender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rbMale"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Male"
-                        android:textColor="@android:color/black"
-                        android:buttonTint="#424242" />
-
-                    <RadioButton
-                        android:id="@+id/rbFemale"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Female"
-                        android:textColor="@android:color/black"
-                        android:buttonTint="#424242"
-                        android:layout_marginStart="24dp" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- Birthday -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Birthday"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="4dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/etBirthday"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:minHeight="48dp"
-                        android:hint="Birthday"
-                        android:background="#F5F5F5"
-                        android:textColorHint="#AAAAAA"
-                        android:textColor="@android:color/black"
-                        android:padding="12dp"
-                        android:focusable="false"
-                        android:clickable="true" />
-
-                    <Button
-                        android:id="@+id/btnSelectBirthday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:text="Select"
-                        android:background="#E0E0E0"
-                        android:textColor="@android:color/black"
-                        android:layout_marginStart="8dp"
-                        android:padding="12dp" />
-                </LinearLayout>
-
-                <!-- CalendarView initially hidden, toggled by Select button -->
-                <CalendarView
-                    android:id="@+id/calendarView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:layout_marginTop="8dp" />
-            </LinearLayout>
-
-            <!-- Address -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Address"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="4dp" />
-
-                <EditText
-                    android:id="@+id/etAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="80dp"
-                    android:hint="Address"
-                    android:background="#F5F5F5"
-                    android:textColorHint="#AAAAAA"
-                    android:textColor="@android:color/black"
-                    android:padding="12dp"
-                    android:gravity="top"
-                    android:inputType="textMultiLine|textPostalAddress"
-                    android:maxLines="4"
-                    android:scrollbars="vertical"
-                    android:imeOptions="actionNext" />
-            </LinearLayout>
-
-            <!-- Email -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="4dp" />
-
-                <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    android:hint="Email"
-                    android:background="#F5F5F5"
-                    android:textColorHint="#AAAAAA"
-                    android:textColor="@android:color/black"
-                    android:padding="12dp"
-                    android:inputType="textEmailAddress"
-                    android:imeOptions="actionDone" />
-            </LinearLayout>
-
-            <!-- Terms Checkbox -->
-            <CheckBox
-                android:id="@+id/cbTerms"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="I agree to Terms of Use"
-                android:textColor="@android:color/black"
-                android:layout_marginTop="24dp"
-                android:buttonTint="#424242" />
-
-            <!-- Register Button -->
-            <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:text="Register"
-                android:background="#E0E0E0"
-                android:textColor="@android:color/black"
-                android:textSize="16sp"
-                android:layout_marginTop="24dp" />
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <!-- Bottom Navigation Bar -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@android:color/black" />
+    <TextView
+        android:id="@+id/textRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate: -"
+        android:textColor="#616161"
+        android:layout_marginTop="4dp" />
 
 </LinearLayout>
